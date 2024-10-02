@@ -22,5 +22,9 @@ It just display the argument passed to it in the terminal. It can have multiple 
 
 ## Challenge-2:
 In this challenge we have to give command `hello` with single argument which is `hackers`. <br>So the full command should be `hello hackers` which gives the flag<br><br>
-`flag: pwn.college{sQKAELQAlf1ot2gJMjNfcc9JANU.dhjNyUDL2EjN0czW}`
+```
+hacker@hello~intro-to-arguments:~$ hello hackers
+Success! Here is your flag:
+pwn.college{sQKAELQAlf1ot2gJMjNfcc9JANU.dhjNyUDL2EjN0czW}
+```
 ##
