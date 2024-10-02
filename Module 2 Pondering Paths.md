@@ -1,20 +1,26 @@
 # Module 2: Pondering Paths
 
-### `whoami` command
-It simply prints the username to the terminal. The promt is once again displayed after the command terminates.
+## Challenge-1: The Root
+In this challenge we have to invoke a program by giving its absolute path.<br>
+Absolute path starts form `/`, the program name is `pwn` and it is in the root directory.<br>
+so the command would be `/pwn` this is the absolute path of pwn program<br>
+which means run the program `pwn` which is inside the root directory
 
-### `hello` command
-The `hello` command is a custom command provided by the environment on the pwn.college platform.<br>
-It is used here for just giving introduction to commands and arguments.
+```
+hacker@paths~the-root:~$ /pwn
+BOOM!!!
+Here is your flag:
+pwn.college{Y8RFssG2WH3l6HXi3wf98Dskanb.dhzN5QDL2EjN0czW}
+```
 
-## Challenge-1:
-In this challenge we just have to execute `hello` command. By executing it we get the flag.<br><br>
-`flag: pwn.college{8ECt4C05JgTyIn8sHKVZPR6ACKX.ddjNyUDL2EjN0czW}`
-## 
-### `echo` command
-It just display the argument passed to it in the terminal. It can have multiple arguments.<br>
-
-## Challenge-2:
-In this challenge we have to give command `hello` with single argument which is `hackers`. <br>So the full command should be `hello hackers` which gives the flag<br><br>
-`flag: pwn.college{sQKAELQAlf1ot2gJMjNfcc9JANU.dhjNyUDL2EjN0czW}`
-##
+## Challenge-2: Program and Absolute path
+In this challenge we have to invoke `run` program which is inside `challenge` folder and the `challenge` folder is in root directory.<br> 
+So, the absolute path will be `/challenge/run`
+```
+hacker@paths~program-and-absolute-paths:~$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path! Here is your flag:
+pwn.college{0CJQSL09ICL6SMCjpFmukOh4BU3.dVDN1QDL2EjN0czW}
+```
+### `dfv`
+## Challenge-3: Position thy self
