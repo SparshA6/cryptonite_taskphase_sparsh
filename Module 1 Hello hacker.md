@@ -10,10 +10,12 @@ All commands are case sensetive, which means `hello` can not be written as `Hell
 
 ## Challenge-1:
 In this challenge we just have to execute `hello` command. By executing it we get the flag.<br><br>
-``hacker@hello~intro-to-commands:~$ hello
+```
+hacker@hello~intro-to-commands:~$ hello
 Success! Here is your flag:
-pwn.college{8ECt4C05JgTyIn8sHKVZPR6ACKX.ddjNyUDL2EjN0czW}``
-`flag: pwn.college{8ECt4C05JgTyIn8sHKVZPR6ACKX.ddjNyUDL2EjN0czW}`
+pwn.college{8ECt4C05JgTyIn8sHKVZPR6ACKX.ddjNyUDL2EjN0czW}
+```
+
 ## 
 ### `echo` command
 It just display the argument passed to it in the terminal. It can have multiple arguments.<br>
