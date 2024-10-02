@@ -5,10 +5,14 @@ It simply prints the username to the terminal. The promt is once again displayed
 
 ### `hello` command
 The `hello` command is a custom command provided by the environment on the pwn.college platform.<br>
-It is used here for just giving introduction to commands and arguments.
+It is used here for just giving introduction to commands and arguments.<br>
+All commands are case sensetive, which means `hello` can not be written as `Hello`
 
 ## Challenge-1:
 In this challenge we just have to execute `hello` command. By executing it we get the flag.<br><br>
+``hacker@hello~intro-to-commands:~$ hello
+Success! Here is your flag:
+pwn.college{8ECt4C05JgTyIn8sHKVZPR6ACKX.ddjNyUDL2EjN0czW}``
 `flag: pwn.college{8ECt4C05JgTyIn8sHKVZPR6ACKX.ddjNyUDL2EjN0czW}`
 ## 
 ### `echo` command
