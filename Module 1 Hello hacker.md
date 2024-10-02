@@ -1,2 +1,3 @@
-#Module 1: Hello Hacker
-##C-1:
+# Module 1: Hello Hacker
+## Challenge-1:
+### `whoami` command
