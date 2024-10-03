@@ -62,7 +62,7 @@ Correct!!!
 Here is your flag:
 pwn.college{0N3TJ-jTzONNvVTDnLJ2-JhopWC.ddDN1QDL2EjN0czW}
 ```
-## Challenge 5: Position elsewhere
+## Challenge 5: Position yet elsewhere
 Process and thinking same as previous
 ```
 hacker@paths~position-yet-elsewhere:~$ /challenge/run
@@ -76,12 +76,55 @@ Correct!!!
 Here is your flag:
 pwn.college{09jY0QTiOG-x6eYytAfx0t1IND6.dhDN1QDL2EjN0czW}
 ```
-## Challenge 6: Position elsewhere
-
-
-
-
-
+## Challenge 6: Implicit relative paths, from /
+For this challenge we have to write `/challenge/run` relative path using `/` as our `cwd`.<br>
+here first we have to change directory to root
+```
+hacker@paths~implicit-relative-paths-from-:~$ cd /
+hacker@paths~implicit-relative-paths-from-:/$
+```
+now we have to give relative path with respect to `/`, the `run` program is in `challenge` folder and `challenge` folder is in root<br>
+Relative path is a path that does not start with `/`, So `challenge/run` will be the relative path 
+```
+hacker@paths~implicit-relative-paths-from-:/$ challenge/run
+Correct!!!
+challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{0Dvcui43YqW7MD6q-jo8_x6z7ql.dlDN1QDL2EjN0czW}
+```
+## Challenge 6: Explicit relative paths, from /
+In this question we have to invoke `/challenge/run` program by giving relative path from `/`. so first I jumped to the root directory, So I cd it
+```
+hacker@paths~explicit-relative-paths-from-:~$ cd /
+hacker@paths~explicit-relative-paths-from-:/$
+```
+Now I gave the relative path for `/challenge/run` which is `challenge/run`
+```
+hacker@paths~explicit-relative-paths-from-:/$ challenge/run
+Incorrect...
+This challenge must be called with a relative path that explicitly starts with a `.`!
+```
+from this I got what to do to get the flag. I just have to give relative path which explicitly starts with a `.`<br>
+Here `.` refers right to the same directory. So it does not changes the meaning of path
+```
+hacker@paths~explicit-relative-paths-from-:/$ ./challenge/run
+Correct!!!
+./challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{423JBugqXOfi_068bHopDdpKulf.dBTN1QDL2EjN0czW}
+```
+## Challenge 7: Implicit relative paths
+This module tells about the use of `.` while specifing the path.<br>
+For safety reasons just writing the name of program will give error `command not found` so if we have to run the program by giving relative path, then we use `.`
+```
+hacker@paths~implicit-relative-path:~$ cd /challenge
+hacker@paths~implicit-relative-path:/challenge$ ./run
+Correct!!!
+./run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{gabPJPH4atVapIEkaUgekdXXYAQ.dFTN1QDL2EjN0czW}
+```
+## Challenge 8: Implicit relative paths
 
 
 
