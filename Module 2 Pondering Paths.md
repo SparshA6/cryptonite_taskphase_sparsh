@@ -124,10 +124,19 @@ Correct!!!
 Here is your flag:
 pwn.college{gabPJPH4atVapIEkaUgekdXXYAQ.dFTN1QDL2EjN0czW}
 ```
-## Challenge 8: Implicit relative paths
-
-
-
+## `~` symbol in path
+`~` symbol is shorthand for home directory, which mean `~` is expanded as `/home/hacker`
+## Important note: 
+expansion of `~` is an absolute path, and only the leading `~` is expanded. This means, for example, that `~/~` will be expanded to `/home/hacker/~` rather than `/home/hacker/home/hacker`.
+## Challenge 8: Home sweet home
+In this challenge, we have to give the absolute path as argument when executing `/challenge/run`, the file path should point to the home directory and should not be more than 3 characters.
+so for pointing to home directory we can use `~`. In home directory we have to copy the content to a file, lets say `a`, So the absolute path would be `~/a`.
+```
+hacker@paths~home-sweet-home:~$  /challenge/run ~/a
+Writing the file to /home/hacker/a!
+... and reading it back to you:
+pwn.college{IR2DxA7zu70s3bFn_f1PDDIzJPC.dNzM4QDL2EjN0czW}
+``` 
 
 
 
