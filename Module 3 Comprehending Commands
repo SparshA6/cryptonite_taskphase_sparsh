@@ -1,3 +1,11 @@
 # Module 3: Comprehending Commands
 ## 
+## `cat` command
+cat is used for reading out files provided as arguments<br>
+If you give no arguments at all, cat will read from the terminal input and output it
 ## Challenge 1. cat: not the pet, but the command!
+This was a simple challenge, we just have to read `flag` file using `cat` command
+```
+hacker@commands~cat-not-the-pet-but-the-command:~$ cat flag
+pwn.college{ghiEBltHv9oQ9G17CkHtl9dJT6r.dFzN1QDL2EjN0czW}
+```
