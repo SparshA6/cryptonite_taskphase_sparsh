@@ -9,3 +9,27 @@ This was a simple challenge, we just have to read `flag` file using `cat` comman
 hacker@commands~cat-not-the-pet-but-the-command:~$ cat flag
 pwn.college{ghiEBltHv9oQ9G17CkHtl9dJT6r.dFzN1QDL2EjN0czW}
 ```
+## Catting absolute paths
+In this challenge we just have to use `cat` command using absolute path
+```
+hacker@commands~catting-absolute-paths:~$ cat /flag
+pwn.college{4Q06tVRLmrQFeNvdAtQtCsmD0ta.dlTM5QDL2EjN0czW}
+```
+
+## more catting practice
+same as previous challenge
+```
+Connected!
+You cannot use the 'cd' command in this level, and must retrieve the flag by
+absolute path. Plus, I hid the flag in a different directory! You can find it
+in the file /lib/compat-ld/flag. Go cat it out **without** cding into that
+directory!
+hacker@commands~more-catting-practice:~$ cat /lib/compat-ld/flag
+pwn.college{shGlwJkXSg49pz5yCzVUvFqekUC.dBjM5QDL2EjN0czW}
+```
+## `grep` command
+This command is use to 
+
+
+
+
