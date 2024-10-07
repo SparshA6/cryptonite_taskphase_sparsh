@@ -88,8 +88,14 @@ hacker@commands~hidden-files:/$ cat .flag-3049459025136
 pwn.college{4KdbkQyrC3ro7wtDO0nLDZ4jcNc.dBTN4QDL2EjN0czW}
 ```
 ## Challenge 9: An epic file quest
+Just have to follow clues and open delayed, trapped, hidden files<br>
+for hidden files, use `ls -a` to get the hidden file name and read it<br>
+for delayed file, use `cd` to go to file path and then read it<br>
+for trapped file, first use `ls` to list all the file in the given location to get the name of wanted file, then `cat` it to read it<br>
+following this logic we get out flag
+`pwn.college{oyQtii6M-IXJwgAXAJB2_njf5Vx.dljM4QDL2EjN0czW}`
 
-## Challenge 8: Making directories
+## Challenge 10: Making directories
 We have to make a `/tmp/pwn` directory and make a `college` file in it! Then run /challenge/run<br>
 just following the steps
 ```
@@ -101,7 +107,7 @@ hacker@commands~making-directories:/tmp/pwn$ /challenge/run
 Success! Here is your flag:
 pwn.college{wS7LLC5s2JxR_LKpw3A5LsyiDfy.dFzM4QDL2EjN0czW}
 ```
-## Challenge 9: Finding files
+## Challenge 11: Finding files
 We have to find a file named `flag`, and try opening each file one by one to get the flag<br>
 We have to ignore all the the permission denied message
 ```
@@ -153,7 +159,7 @@ cat: ./usr/local/lib/python3.8/dist-packages/pwnlib/flag: Is a directory
 hacker@commands~finding-files:/$ cat ./usr/share/locale/frp/flag
 pwn.college{42FZMsttZgQnd1R8Q_STJBZyNqp.dJzM4QDL2EjN0czW}
 ```
-## Challenge 10: linking files
+## Challenge 12: linking files
 Here the `/challenge/catflag` is reading `/home/hacker/not-the-flag file` file.
 I first run the `/challenge/flag` to see what happens
 ```
