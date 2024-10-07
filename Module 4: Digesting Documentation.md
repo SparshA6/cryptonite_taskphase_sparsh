@@ -18,6 +18,42 @@ pwn.college{oy0uW5xug25ZFgGJD48mnqbN2Vm.dVjM5QDL2EjN0czW}
 ```
 ## `man` command
 This command will display (if available) the manual of the command you pass as an argument
-## Challenge 2: Reading Manual
+## Challenge 3: Reading Manual
+first read the manual
+```
+CHALLENGE(1)                                      Challenge Commands                                     CHALLENGE(1)
 
+NAME
+       /challenge/challenge - print the flag!
+
+SYNOPSIS
+       challenge OPTION
+
+DESCRIPTION
+       Output the flag when called with the right arguments.
+
+       --fortune
+              read a fortune
+
+       --version
+              output version information and exit
+
+       --lhetva NUM
+              print the flag if NUM is 465
+
+AUTHOR
+       Written by Zardus.
+
+REPORTING BUGS
+       The repository for this dojo: <https://github.com/pwncollege/linux-luminarium/>
+
+SEE ALSO
+       man(1) bash-builtins(7)
+```
+here for getting the flag we have to give `465` to `--lhetva` argument
+```
+hacker@man~reading-manuals:~$  /challenge/challenge --lhetva 465
+Correct usage! Your flag: pwn.college{YMlO4Y6VDPhCNet5JvP4GaPstdb.dRTM4QDL2EjN0czW}
+```
+## Challenge 4: Searching manual
 
