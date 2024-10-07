@@ -77,3 +77,16 @@ hacker@commands~removing-files:~$ /challenge/check
 Excellent removal. Here is your reward:
 pwn.college{gWsBiRvJwdDmK5bWdVyjtriOLbb.dZTOwUDL2EjN0czW}
 ```
+## Challenge 8: Making directories
+We have to make a `/tmp/pwn` directory and make a `college` file in it! Then run /challenge/run<br>
+just following the steps
+```
+hacker@commands~making-directories:~$ cd /tmp
+hacker@commands~making-directories:/tmp$ mkdir pwn
+hacker@commands~making-directories:/tmp$ cd pwn
+hacker@commands~making-directories:/tmp/pwn$ touch college
+hacker@commands~making-directories:/tmp/pwn$ /challenge/run
+Success! Here is your flag:
+pwn.college{wS7LLC5s2JxR_LKpw3A5LsyiDfy.dFzM4QDL2EjN0czW}
+```
+## Challenge 9: Making directories
