@@ -38,7 +38,7 @@ pwn.college{kbNUC7VW2wFTdVtplB6ECuIh58Y.ddTM4QDL2EjN0czW}
 
 ## `ls` command
 ls will list files in all the directories provided to it as arguments, and in the current directory if no arguments are provided.
-## Challenge 5: 
+## Challenge 5: Listing files 
 We have to list the files in the challenge directory to get the file name. After we get the file name we just have to open it
 ```
 hacker@commands~listing-files:~$ cd /challenge
@@ -77,6 +77,18 @@ hacker@commands~removing-files:~$ /challenge/check
 Excellent removal. Here is your reward:
 pwn.college{gWsBiRvJwdDmK5bWdVyjtriOLbb.dZTOwUDL2EjN0czW}
 ```
+## Challenge 8: hidden files
+We have to use `ls -a` to list the files starting with `.`
+```
+hacker@commands~hidden-files:~$ cd /
+hacker@commands~hidden-files:/$ ls -a
+.   .dockerenv           bin   challenge  etc   lib    lib64   media  nix  proc  run   srv  tmp  var
+..  .flag-3049459025136  boot  dev        home  lib32  libx32  mnt    opt  root  sbin  sys  usr
+hacker@commands~hidden-files:/$ cat .flag-3049459025136
+pwn.college{4KdbkQyrC3ro7wtDO0nLDZ4jcNc.dBTN4QDL2EjN0czW}
+```
+## Challenge 9: An epic file quest
+
 ## Challenge 8: Making directories
 We have to make a `/tmp/pwn` directory and make a `college` file in it! Then run /challenge/run<br>
 just following the steps
@@ -90,15 +102,9 @@ Success! Here is your flag:
 pwn.college{wS7LLC5s2JxR_LKpw3A5LsyiDfy.dFzM4QDL2EjN0czW}
 ```
 ## Challenge 9: Finding files
-We 
-hacker@commands~finding-files:~$ find -name flag
-hacker@commands~finding-files:~$ ls
-a  folder  m
-hacker@commands~finding-files:~$ ls folder
-hacker@commands~finding-files:~$ rm a
-rm: remove write-protected regular file 'a'? Y
-hacker@commands~finding-files:~$ rm folder
-rm: cannot remove 'folder': Is a directory
+We have to find a file named `flag`, and try opening each file one by one to get the flag<br>
+We have to ignore all the the permission denied message
+```
 hacker@commands~finding-files:~$ cd /
 hacker@commands~finding-files:/$ find -name flag
 find: ‘./root’: Permission denied
@@ -146,3 +152,20 @@ hacker@commands~finding-files:/$ cat ./usr/local/lib/python3.8/dist-packages/pwn
 cat: ./usr/local/lib/python3.8/dist-packages/pwnlib/flag: Is a directory
 hacker@commands~finding-files:/$ cat ./usr/share/locale/frp/flag
 pwn.college{42FZMsttZgQnd1R8Q_STJBZyNqp.dJzM4QDL2EjN0czW}
+```
+## Challenge 10: linking files
+Here the `/challenge/catflag` is reading `/home/hacker/not-the-flag file` file.
+I first run the `/challenge/flag` to see what happens
+```
+hacker@commands~linking-files:~$ /challenge/catflag
+About to read out the /home/hacker/not-the-flag file!
+cat: /home/hacker/not-the-flag: No such file or directory
+```
+There is no `/home/hacker/not-the-flag` file, but `/challenge/flag` is reading it.<br>
+So I created a symlink for `/flag` with `/home/hacker/not-the-flag`
+```
+hacker@commands~linking-files:~$ ln -s /flag ~/not-the-flag
+hacker@commands~linking-files:~$ /challenge/catflag
+About to read out the /home/hacker/not-the-flag file!
+pwn.college{oVZfPATM5wzK3vyk7bxGcA8pJ6b.dlTM1UDL2EjN0czW}
+```
