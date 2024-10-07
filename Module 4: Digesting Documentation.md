@@ -56,4 +56,14 @@ hacker@man~reading-manuals:~$  /challenge/challenge --lhetva 465
 Correct usage! Your flag: pwn.college{YMlO4Y6VDPhCNet5JvP4GaPstdb.dRTM4QDL2EjN0czW}
 ```
 ## Challenge 4: Searching manual
-
+We can use `/` to search in the manual
+```
+hacker@man~searching-manuals:~$ man challenge
+```
+After searching we get `--zqywtrh` as the argument which when passsed will give the flag
+```
+hacker@man~searching-manuals:~$ /challenge/challenge --zqywtrh
+Initializing...
+Correct usage! Your flag: pwn.college{41-J5F9jzbWHh14AJw2VawLYjGB.dVTM4QDL2EjN0czW}
+```
+## Challenge 5: Searching for manual
