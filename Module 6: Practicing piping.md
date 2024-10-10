@@ -79,6 +79,96 @@ FD 0: Standard Input
 FD 1: Standard Output
 FD 2: Standard Error
 
+## challenge 4: redirecting errors
+```
+hacker@piping~redirecting-errors:~$ /challenge/run > myflag 2> instructions
+hacker@piping~redirecting-errors:~$ cat myflag
+
+[FLAG] Here is your flag:
+[FLAG] pwn.college{wXxZbCvpOQyP8Zu7YMpJm4lfT7V.ddjN1QDL2EjN0czW}
+```
+## challenge 5: redirecting inputs
+```
+hacker@piping~redirecting-input:~$ echo COLLEGE > PWN
+hacker@piping~redirecting-input:~$ /challenge/run < PWN
+Reading from standard input...
+Correct! You have redirected the PWN file into my standard input, and I read
+the value 'COLLEGE' out of it!
+Here is your flag:
+pwn.college{kRX5XYf2RAlu87-6cInU7oDs-fp.dBzN1QDL2EjN0czW}
+```
+## challenge 6: Grepping stored results
+```
+hacker@piping~grepping-stored-results:~$ /challenge/run >  /tmp/data.txt
+[INFO] WELCOME! This challenge makes the following asks of you:
+[INFO] - the challenge will check that output is redirected to a specific file path : /tmp/data.txt
+[INFO] - the challenge will output a reward file if all the tests pass : /challenge/.data.txt
+
+[HYPE] ONWARDS TO GREATNESS!
+
+[INFO] This challenge will perform a bunch of checks.
+[INFO] If you pass these checks, you will receive the /challenge/.data.txt file.
+
+[TEST] You should have redirected my stdout to a file called /tmp/data.txt. Checking...
+
+[HINT] File descriptors are inherited from the parent, unless the FD_CLOEXEC is set by the parent on the file descriptor.
+[HINT] For security reasons, some programs, such as python, do this by default in certain cases. Be careful if you are
+[HINT] creating and trying to pass in FDs in python.
+
+[PASS] The file at the other end of my stdout looks okay!
+[PASS] Success! You have satisfied all execution requirements.
+hacker@piping~grepping-stored-results:~$ grep pwn.college{  /tmp/data.txt
+pwn.college{w_w16tnL3RB37f4RXBHBLYF3yXH.dhTM4QDL2EjN0czW}
+```
+
+## challenge 7: Grepping live output
+```
+hacker@piping~grepping-live-output:~$ /challenge/run | grep pwn.college{
+[INFO] WELCOME! This challenge makes the following asks of you:
+[INFO] - the challenge checks for a specific process at the other end of stdout : grep
+[INFO] - the challenge will output a reward file if all the tests pass : /challenge/.data.txt
+
+[HYPE] ONWARDS TO GREATNESS!
+
+[INFO] This challenge will perform a bunch of checks.
+[INFO] If you pass these checks, you will receive the /challenge/.data.txt file.
+
+[TEST] You should have redirected my stdout to another process. Checking...
+[TEST] Performing checks on that process!
+
+[INFO] The process' executable is /nix/store/xpq4yhadyhazkcsggmqd7rsgvxb3kjy4-gnugrep-3.11/bin/grep.
+[INFO] This might be different than expected because of symbolic links (for example, from /usr/bin/python to /usr/bin/python3 to /usr/bin/python3.8).
+[INFO] To pass the checks, the executable must be grep.
+
+[PASS] You have passed the checks on the process on the other end of my stdout!
+[PASS] Success! You have satisfied all execution requirements.
+pwn.college{khrkCXfWmdNeWDaqSSinwpjfS7N.dlTM4QDL2EjN0czW}
+```
+
+## challenge 8: Grepping errors
+```
+hacker@piping~grepping-errors:~$ /challenge/run 2>&1 | grep pwn.college
+[INFO] WELCOME! This challenge makes the following asks of you:
+[INFO] - the challenge checks for a specific process at the other end of stderr : grep
+[INFO] - the challenge will output a reward file if all the tests pass : /challenge/.data.txt
+
+[HYPE] ONWARDS TO GREATNESS!
+
+[INFO] This challenge will perform a bunch of checks.
+[INFO] If you pass these checks, you will receive the /challenge/.data.txt file.
+
+[TEST] You should have redirected my stderr to another process. Checking...
+[TEST] Performing checks on that process!
+
+[INFO] The process' executable is /nix/store/xpq4yhadyhazkcsggmqd7rsgvxb3kjy4-gnugrep-3.11/bin/grep.
+[INFO] This might be different than expected because of symbolic links (for example, from /usr/bin/python to /usr/bin/python3 to /usr/bin/python3.8).
+[INFO] To pass the checks, the executable must be grep.
+
+[PASS] You have passed the checks on the process on the other end of my stderr!
+[PASS] Success! You have satisfied all execution requirements.
+pwn.college{o2AgY-xc1z2S13vo_q-vj06zB0H.dVDM5QDL2EjN0czW}
+
+```
 
 
 
