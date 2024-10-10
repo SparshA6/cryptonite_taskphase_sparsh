@@ -170,6 +170,8 @@ pwn.college{o2AgY-xc1z2S13vo_q-vj06zB0H.dVDM5QDL2EjN0czW}
 
 ```
 
+## challenge 9: Duplicating pipped data with tee
+
 
 
 
